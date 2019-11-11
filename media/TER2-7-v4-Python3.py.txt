@@ -1,0 +1,205 @@
+# -*- coding: cp1252 -*-
+import pygame
+from pygame.locals import *
+import random 
+import time
+from pygame import display,movie
+#from moviepy.editor import * 
+
+#Initialize pygame
+pygame.init()
+
+NB_Video = 3
+TailleButton = 100
+NbButton = 4
+TailleInitEcranX = 1000
+TailleInitEcranY = 1000
+nomvid = time.strftime('%d/%m/%y %H:%M',time.localtime())
+
+class Button:
+    def create_button(self, surface, color, x, y, length, height, width, text, text_color):
+        surface = self.draw_button(surface, color, length, height, x, y, width)
+        surface = self.write_text(surface, text, text_color, length, height, x, y)
+        self.rect = pygame.Rect(x,y, length, height)
+        return surface
+
+    def write_text(self, surface, text, text_color, length, height, x, y):
+        font_size = int(length//len(text))
+        myFont = pygame.font.SysFont("Arial", font_size)
+        myText = myFont.render(text, 1, text_color)
+        surface.blit(myText, ((x+length/2) - myText.get_width()/2, (y+height/2) - myText.get_height()/2))
+        return surface
+
+    def draw_button(self, surface, color, length, height, x, y, width):           
+        pygame.draw.rect(surface, color, (x,y,length,height), 0)
+        pygame.draw.rect(surface, (0,0,190), (x,y,length,height), 2)  #couleur bordure
+        return surface
+
+    def pressed(self, mouse):
+        if mouse[0] > self.rect.topleft[0]:
+            if mouse[1] > self.rect.topleft[1]:
+                if mouse[0] < self.rect.bottomright[0]:
+                    if mouse[1] < self.rect.bottomright[1]:
+                        print ('pressed')
+                        return True
+                    else: return False
+                else: return False
+            else: return False
+        else: return False
+
+
+class Button_Example:
+    def __init__(self):
+        self.main()
+    
+    #Create a display
+    def init_display(self):
+        self.screen=pygame.display.set_mode((TailleInitEcranX,TailleInitEcranY),HWSURFACE|DOUBLEBUF|RESIZABLE)
+        pygame.display.set_caption("Exeperience")
+        self.pic=pygame.image.load("fonds/fond7.png") #picture in same folder as this file
+        pygame.display.flip()
+
+    #Run the loop
+    def main(self):
+        self.init_display()
+
+        liste = []
+        for i in range (1,NB_Video+1):
+            liste.append(i)
+        random.shuffle(liste)
+
+
+        tailleXecran = pygame.display.get_surface().get_size()[0]
+        tailleYecran = pygame.display.get_surface().get_size()[1]
+        self.ButtonOk = Button()
+        self.ButtonOk.create_button(self.screen, (200,200,200), (tailleXecran/2)-(TailleButton/2),(tailleYecran/2) - (TailleButton/2), TailleButton, TailleButton, 0,        "GO",    (0,0,0))
+        pygame.display.flip()
+
+        # pour toutes les videos
+        for i in range (0,len(liste)):
+
+            # cliquer ok pour demarrer
+            ok = False
+            while ok == False:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                    # Resize event
+                    elif event.type==VIDEORESIZE:
+                        screen=pygame.display.set_mode(event.dict['size'],HWSURFACE|DOUBLEBUF|RESIZABLE)
+                        screen.blit(pygame.transform.scale(self.pic,event.dict['size']),(0,0))
+                        tailleXecran = pygame.display.get_surface().get_size()[0]
+                        tailleYecran = pygame.display.get_surface().get_size()[1]
+                        self.ButtonOk.create_button(self.screen, (200,200,200), (tailleXecran/2)-(TailleButton/2),(tailleYecran/2) - (TailleButton/2), TailleButton, TailleButton, 0,        "GO",    (0,0,0))
+                        pygame.display.flip()
+                    # Buttons event 
+                    elif event.type == MOUSEBUTTONDOWN:
+                        if self.ButtonOk.pressed(pygame.mouse.get_pos()):
+                            print ('Ok')
+                            ok = True
+                pygame.display.flip()
+
+            
+            #affiche la video plein ecran
+            print (liste)
+            print ("vdo%d.mpg" %liste[i])
+            
+            video = pygame.movie.Movie("vdo%d.mpg" %liste[i])
+#            video = pygame.movie.Movie.play("vdo3.mpg")
+            mrect = pygame.Rect(0,0,tailleXecran,tailleYecran) 
+            video.set_display(self.screen, mrect.move(0, 0)) 
+            video.play()
+            while video.get_busy() == True:
+                last_frame = video.get_frame()
+                #print (last_frame)
+
+            print (video.get_length())
+            longueur = video.get_length()
+            video.rewind()
+            video.skip(longueur - 0.2)
+            #video.render_frame(last_frame)
+            pygame.display.flip()
+
+            # cliquer A, B, C ou D
+            self.ButtonA = Button()
+            self.ButtonB = Button()
+            self.ButtonC = Button()
+            self.ButtonD = Button()
+            taille_inter_bouton = (tailleXecran - (NbButton*TailleButton))/(NbButton+1)
+            print (tailleXecran, taille_inter_bouton, TailleButton)
+            self.ButtonA.create_button(self.screen, (200,200,200), taille_inter_bouton, (tailleYecran/2)-(TailleButton/2), TailleButton, TailleButton, 0, "A",    (0,0,0))
+            self.ButtonB.create_button(self.screen, (200,200,200), taille_inter_bouton*2+TailleButton, (tailleYecran/2)-(TailleButton/2), TailleButton, TailleButton, 0, "B",    (0,0,0))
+            self.ButtonC.create_button(self.screen, (200,200,200), taille_inter_bouton*3+TailleButton*2, (tailleYecran/2)-(TailleButton/2), TailleButton, TailleButton, 0, "C",    (0,0,0))
+            self.ButtonD.create_button(self.screen, (200,200,200), taille_inter_bouton*4+TailleButton*3, (tailleYecran/2)-(TailleButton/2), TailleButton, TailleButton, 0, "D",    (0,0,0))
+            pygame.display.flip()
+
+            choix = False            
+            while choix == False:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                    # Resize event
+                    elif event.type==VIDEORESIZE:
+                        screen=pygame.display.set_mode(event.dict['size'],HWSURFACE|DOUBLEBUF|RESIZABLE)
+                        screen.blit(pygame.transform.scale(self.pic,event.dict['size']),(0,0))
+                        tailleXecran = pygame.display.get_surface().get_size()[0]
+                        tailleYecran = pygame.display.get_surface().get_size()[1]
+                        self.ButtonA.create_button(self.screen, (200,200,200), taille_inter_bouton, (tailleYecran/2)-(TailleButton/2), TailleButton, TailleButton, 0, "A",    (0,0,0))
+                        self.ButtonB.create_button(self.screen, (200,200,200), taille_inter_bouton*2+TailleButton, (tailleYecran/2)-(TailleButton/2), TailleButton, TailleButton, 0, "B",    (0,0,0))
+                        self.ButtonC.create_button(self.screen, (200,200,200), taille_inter_bouton*3+TailleButton*2, (tailleYecran/2)-(TailleButton/2), TailleButton, TailleButton, 0, "C",    (0,0,0))
+                        self.ButtonD.create_button(self.screen, (200,200,200), taille_inter_bouton*4+TailleButton*3, (tailleYecran/2)-(TailleButton/2), TailleButton, TailleButton, 0, "D",    (0,0,0))
+                        pygame.display.flip()
+                    # Buttons event 
+                    elif event.type == MOUSEBUTTONDOWN:
+                        if self.ButtonA.pressed(pygame.mouse.get_pos()):
+                            print ('A')
+                            choix = 1
+                            liste[i] = (liste[i],choix)
+                        if self.ButtonB.pressed(pygame.mouse.get_pos()):
+                            print ('B')
+                            choix = 2
+                            liste[i] = (liste[i],choix)                            
+                        if self.ButtonC.pressed(pygame.mouse.get_pos()):
+                            print ('C')
+                            choix = 3
+                            liste[i] = (liste[i],choix)                            
+                        if self.ButtonD.pressed(pygame.mouse.get_pos()):
+                            print ('D')
+                            choix = 4
+                            liste[i] = (liste[i],choix)
+                    elif event.type == KEYDOWN:
+                        if event.key == pygame.K_1:
+                            choix = 1
+                            liste[i] = (liste[i],choix)
+                        if event.key == pygame.K_2:
+                            choix = 2
+                            liste[i] = (liste[i],choix)
+                        if event.key == pygame.K_3:
+                            choix = 3
+                            liste[i] = (liste[i],choix)                              
+                pygame.display.flip()
+            #video suivante
+            self.screen.fill((0,0,0))
+            tailleXecran = pygame.display.get_surface().get_size()[0]
+            tailleYecran = pygame.display.get_surface().get_size()[1]
+            self.ButtonOk = Button()
+            self.ButtonOk.create_button(self.screen, (200,200,200), (tailleXecran/2)-(TailleButton/2),(tailleYecran/2) - (TailleButton/2), TailleButton, TailleButton, 0,        "GO",    (0,0,0))
+            pygame.display.flip()
+                
+        #fin de boucle des videos
+        self.screen.fill((0,0,0))
+
+        #sauvegarde des donnees dans un fichier txt
+        print (liste)
+        liste = sorted(liste)
+        print (liste)
+        resultat_FINAL_save = ('result%s' %nomvid)
+        print (resultat_FINAL_save)
+        file = open('%s.txt' %resultat_FINAL_save, 'w')
+        file.write('(n° video, choix : A=1 B=2 C=3 D=4)\n')
+        file.write(str(liste))
+        file.write('\n')
+        file.close()
+
+if __name__ == '__main__':
+    obj = Button_Example()           

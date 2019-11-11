@@ -1,0 +1,493 @@
+h1, h2, h3, h4, h5, h6 {
+  text-align: left;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+body {
+  font-family: Roboto;
+  font-size: 14px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.row{
+  margin-right: 0;
+}
+.container-fluid{
+  padding-right: 0;
+}
+#abstract, #conception, #resultats, #discussion{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+#header-container{
+  min-height:900px;
+}
+#header-to-bottom{
+  position:absolute;
+  bottom:0;
+}
+
+#header {
+  background: url(../media/img/imgintro.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  min-height:900px;
+  height: auto;
+}
+
+#subheader {
+  min-height:900px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(0,0,0,0)), color-stop(75%,rgba(0,0,0,0.62)), color-stop(100%,rgba(0,0,0,0.8))), none no-repeat;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 10%, rgba(0,0,0,0.62) 75%, rgba(0,0,0,0.8) 100%), none no-repeat;
+  color: white;
+  height: auto;
+}
+
+
+#header-title {
+  position: absolute;
+  bottom: 0
+}
+.firstlvl{
+  padding: 0 12% 0 12%;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.bg-gradient{
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(0,0,0,0.45)), color-stop(0%,rgba(0,0,0,0.8))), none no-repeat;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.76) 10%, rgba(0,0,0,0.68) 50%, rgba(0,0,0,0.0) 100%), none no-repeat;
+}
+
+.bg-gradient-equipe{
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(55%,rgba(0,0,0,0.45)), color-stop(0%,rgba(0,0,0,0.8))), none no-repeat;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.76) 10%, rgba(0,0,0,0.0) 55%), none no-repeat;
+}
+ul {
+    list-style: square;
+}
+em {
+  font-weight: bold;
+}
+#eyetrack {
+  background: url(../media/img/image10.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#emotions {
+  background: url(../media/img/truc14.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+
+
+#decision,#Perception{
+  background: url(../media/img/imageD.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Prisededecision {
+  background: url(../media/img/imageC.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Anticipation {
+  background: url(../media/img/imageB.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Comparaisonexpertsvsnovices {
+  background: url(../media/img/imageI.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#protocole {
+  background: url(../media/img/imageH.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Resultats {
+  background: url(../media/img/imageG.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Discussion {
+  background: url(../media/img/imageE.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+
+#Hypothèses {
+  background: url(../media/img/imageE.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Materiel{
+  background: url(../media/img/imageB.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Captation, #Montageetinterface, #Participants {
+  background: url(../media/img/imageH.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Montageetinterface, #Participants {
+  background: url(../media/img/imageG.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Participants {
+  background: url(../media/img/imageE.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#OccultationTemporelle {
+  background: url(../media/img/tennis1.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Occultationspatiale {
+  background: url(../media/img/tennis1.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+
+#Prisedinformation{
+  background: url(../media/img/imageA.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Prisededécision {
+  background: url(../media/img/imageF.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Autres {
+  background: url(../media/img/image10.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#Conclusion {
+  background: url(../media/img/imageD.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+#team {
+  background: url(../media/img/team.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height:auto;
+  color: white
+}
+
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(0,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+
+
+
+.lib-panel {
+    margin-bottom: 20Px;
+}
+.lib-panel img {
+    width: 100%;
+    background-color: transparent;
+}
+
+.lib-panel .row,
+.lib-panel .col-md-6 {
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+
+.lib-panel .lib-row {
+    padding: 0 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header {
+    background-color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header .lib-header-seperator {
+    height: 2px;
+    width: 26px;
+    background-color: #d9d9d9;
+    margin: 7px 0 7px 0;
+}
+
+.lib-panel .lib-row.lib-desc {
+    position: relative;
+    height: 100%;
+    display: block;
+    font-size: 13px;
+}
+.lib-panel .lib-row.lib-desc a{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 20px;
+}
+
+.row-margin-bottom {
+    margin-bottom: 20px;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+}
+
+.no-padding {
+    padding: 0;
+}
+
+li.active {
+  color:black;
+  border-right: #1ABC9C solid 5px;
+  background-color: #333
+}
+
+.sub-section{
+  margin-left: 15px;
+  font-weight: lighter;
+}
+
+#footer{
+  position: relative;
+  display: block;
+  background-color: #eee;
+  height:100px;
+  padding-left: 12%;
+  padding-top: 36px;
+  margin-left: -15px;
+}
