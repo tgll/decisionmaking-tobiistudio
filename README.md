@@ -32,4 +32,4 @@ Languages and software used:
 
 ### More courses
 
-See the summary of other courses projects [here](httpsgithub.comtgllCOURSES-PROJECTS-list)
+See the summary of other courses projects [here](https://github.com/tgll/COURSES-PROJECTS-list)
